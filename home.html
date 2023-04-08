@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+
+<meta charset="utf-8">
+<title>
+議論促進カードシステム
+</title>
+<link rel="stylesheet" href='home_style.css'/> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/push.js/0.0.11/push.min.js"></script>
+
+<style type="home_style.css">
+
+</style>
+</head>
+
+<body onload="Load()">
+    
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyDrFDIrGd9OjFqzbkVptqYoHdKpdafdMnQ",
+        authDomain: "discussionapp-3ac1b.firebaseapp.com",
+        projectId: "discussionapp-3ac1b",
+        storageBucket: "discussionapp-3ac1b.appspot.com",
+        messagingSenderId: "678286899809",
+        appId: "1:678286899809:web:b8a8ab284f58c80d6c4820",
+        measurementId: "G-2V4L4JSFQB"
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
+    
+   <div class="wrapper grid">
+      <div class="item">
+            <div>
+               <img src="icon_144400_256.png" alt="人物アイコン" width="120" height="120">
+            </div>
+            <p>A</p>
+             <label for="trigger" class="open_btn" onclick="dispiay1()">
+                 <p1 id="getData1"></p1>
+             </label>
+            <!--<label for="trigger" class="open_btn2" onclick="dispiay2_1()">-->
+                <!--<p1 id="getData2_1"></p1>-->
+            <!--</label>-->
+      </div>
+      
+      <div class="item">
+            <div>
+                <img src={% static "icon_144400_256.png" %} alt="人物" width="120" height="120">
+            </div>
+            <p>B</p>
+            <label for="trigger" class="open_btn" onclick="dispiay2()">
+                <p1 id="getData2"></p1>
+            </label>
+            <!-- <label for="trigger" class="open_btn2"　onclick="dispiay2_2()">-->
+                <!--<p1 id="getData2_2"></p1>-->
+            <!--</label>-->
+      </div>
+      
+       <div class="item">
+             <div>
+                 <img src={% static "icon_144400_256.png" %} alt="人物" width="120" height="120">
+             </div>
+             <p>C</p>
+             <label for="trigger" class="open_btn"　onclick="dispiay3()">
+                 <p1 id="getData3"></p1>
+             </label>
+             <!-- <label for="trigger" class="open_btn2" onclick="dispiay2_3()">-->
+                <!--  <p1 id="getData2_3"></p1>-->
+             <!-- </label>-->
+       </div>
+      
+       <div class="item">
+             <div>
+                 <img src={% static "icon_144400_256.png" %} alt="人物" width="120" height="120">
+             </div>
+             <p>D</p>
+             <label for="trigger" class="open_btn" onclick="dispiay4()">
+                 <p1 id="getData4"></p1>
+             </label>
+             <!-- <label for="trigger" class="open_btn2" onclick="dispiay2_4()">-->
+                 <!-- <p1 id="getData2_4"></p1>-->
+             <!-- </label>-->
+       </div>
+      
+       <div class="item">
+             <div>
+                 <img src={% static "icon_144400_256.png" %} alt="人物" width="120" height="120">
+             </div>
+             <p>E</p>
+             <label for="trigger" class="open_btn" onclick="dispiay5()">
+                 <p1 id="getData5"></p1>
+             </label>
+             <!-- <label for="trigger" class="open_btn2" onclick="dispiay2_5()">-->
+                 <!-- <p1 id="getData2_5"></p1>-->
+             <!-- </label>-->
+       </div>
+      
+       <div class="item">
+             <div>
+                 <img src={% static "icon_144400_256.png" %} alt="人物" width="120" height="120">
+             </div>
+             <p>F</p>
+             <label for="trigger" class="open_btn" onclick="dispiay6()">
+                 <p1 id="getData6"></p1>
+             </label>
+             <!-- <label for="trigger" class="open_btn2" onclick="dispiay2_6()">-->
+                 <!-- <p1 id="getData2_6"></p1>-->
+             <!-- </label>-->
+       </div>
+      
+       <div class="item">
+             <div>
+                 <img src={% static "icon_144400_256.png" %} alt="人物" width="120" height="120">
+             </div>
+             <p>G</p>
+             <label for="trigger" class="open_btn" onclick="dispiay7()">
+                 <p1 id="getData7"></p1>
+             </label>
+             <!-- <label for="trigger" class="open_btn2" onclick="dispiay2_7()">-->
+                 <!-- <p1 id="getData2_7"></p1>-->
+             <!-- </label>-->
+       </div>
+      
+       <div class="item">
+             <div>
+                 <img src={% static "icon_144400_256.png" %} alt="人物" width="120" height="120">
+             </div>
+             <p>H</p>
+             <label for="trigger" class="open_btn" onclick="dispiay8()">
+                 <p1 id="getData8"></p1>
+             </label>
+             <!-- <label for="trigger" class="open_btn2" onclick="dispiay2_8()">-->
+                 <!-- <p1 id="getData2_8"></p1>-->
+             <!-- </label>-->
+       </div>
+      
+       <div class="item">
+             <div>
+                 <img src={% static "icon_144400_256.png" %} alt="人物" width="120" height="120">
+             </div>
+             <p>I</p>
+             <label for="trigger" class="open_btn" onclick="dispiay9()">
+                 <p1 id="getData9"></p1>
+             </label>
+             <!-- <label for="trigger" class="open_btn2" onclick="dispiay2_9()">-->
+                 <!-- <p1 id="getData2_9"></p1>-->
+             <!-- </label>-->
+       </div>
+      
+       <div class="item">
+             <div>
+                 <img src={% static "icon_144400_256.png" %} alt="人物" width="120" height="120">
+             </div>
+             <p>J</p>
+             <label for="trigger" class="open_btn" onclick="dispiay10()">
+                 <p1 id="getData10"></p1>
+             </label>
+             <!-- <label for="trigger" class="open_btn2" onclick="dispiay2_10()">-->
+                 <!-- <p1 id="getData2_10"></p1>-->
+             <!-- </label>-->
+       </div>
+      
+       <div class="item">
+             <div>
+                 <img src={% static "icon_144400_256.png" %} alt="人物" width="120" height="120">
+             </div>
+             <p>K</p>
+             <label for="trigger" class="open_btn" onclick="dispiay11()">
+                <p1 id="getData11"></p1>
+             </label>
+             <!-- <label for="trigger" class="open_btn2" onclick="dispiay2_11()">-->
+                 <!-- <p1 id="getData2_11"></p1>-->
+             <!-- </label>-->
+       </div>
+      
+       <div class="item">
+             <div>
+                 <img src={% static "icon_144400_256.png" %} alt="人物" width="120" height="120">
+             </div>
+             <p>L</p>
+             <label for="trigger" class="open_btn" onclick="dispiay12()">
+                <p1 id="getData12"></p1>
+             </label>
+             <!-- <label for="trigger" class="open_btn2" onclick="dispiay2_12()">-->
+                 <!-- <p1 id="getData2_12"></p1>-->
+             <!-- </label>-->
+       </div>
+
+   </div>
+   
+   <div class="box">
+       <button align="center" onclick="shuffle(role_card);return rpush()"> 役割カードをシャッフル！ </button>
+       <!-- <button align="center" onclick="shuffleCard(a_card);return apush()" > 属性カードをシャッフル！ </button>-->
+   </div>
+
+    <div class="popup_wrap">
+    <input id="trigger" type="checkbox">
+        <div class="popup_overlay">
+            <label for="trigger" class="popup_trigger"></label>
+            <div class="popup_content">
+                <label for="trigger" class="close_btn">×</label>
+                    <span id="img1"></span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- <div class="popup_wrap2">-->
+    <!-- <input id="trigger2" type="checkbox">-->
+        <!-- <div class="popup_overlay2">-->
+            <!-- <label for="trigger" class="popup_trigger2"></label>-->
+            <!-- <div class="popup_content2">-->
+                <!-- <label for="trigger" class="close_btn2">×</label>-->
+                    <!--<img src={% static "感情.JPG" %} alt="感情説明" width="400" height="420">-->
+                    <!-- <span id="img1"></span>-->
+            <!-- </div>-->
+        <!-- </div>-->
+    <!-- </div>-->
+
+</body>
+
+ <script type="text/javascript">
+        const role_card = ["司会", "議事録", "タイマー", "仕掛け人", "仕掛け人", "脱線防止", "疑問", "整理", "疑問", "疑問", "便乗", "便乗"]
+        //const a_card = ["メリット", "メリット", "デメリット", "デメリット", "疑問", "疑問", "疑問", "感情", "感情", "感情", "データ", "データ"]
+        
+        const rolecard = role_card.slice();
+        const acard = a_card.slice();
+        
+        //シャッフルボタンを押したとき
+        function shuffle() {
+             for (let i = rolecard.length - 1; i >= 0; i--) {
+               const randomIndex = Math.floor(Math.random() * (i + 1));
+               [rolecard[i], rolecard[randomIndex]] = [rolecard[randomIndex], rolecard[i]];
+             }
+             
+             document.getElementById("getData1").innerHTML = rolecard[0];
+             document.getElementById("getData2").innerHTML = rolecard[1];
+             document.getElementById("getData3").innerHTML = rolecard[2];
+             document.getElementById("getData4").innerHTML = rolecard[3];
+             document.getElementById("getData5").innerHTML = rolecard[4];
+             document.getElementById("getData6").innerHTML = rolecard[5];
+             document.getElementById("getData7").innerHTML = rolecard[6];
+             document.getElementById("getData8").innerHTML = rolecard[7];
+             document.getElementById("getData9").innerHTML = rolecard[8];
+             document.getElementById("getData10").innerHTML = rolecard[9];
+             document.getElementById("getData11").innerHTML = rolecard[10];
+             document.getElementById("getData12").innerHTML = rolecard[11];
+             
+             if(window.localStorage){
+                 let json = JSON.stringify(rolecard, undefined, 1);
+                 localStorage.setItem('role',json);
+                 
+                 /*let json_role = localStorage.getItem('role');
+                 let array = localStorage.getItem('role');*/
+                 }
+             
+        }
+           
+        function shuffleCard() {
+             for (let i = acard.length - 1; i >= 0; i--) {
+               const randomIndex = Math.floor(Math.random() * (i + 1));
+               [acard[i], acard[randomIndex]] = [acard[randomIndex], acard[i]];
+             }
+             
+             document.getElementById("getData2_1").innerHTML = acard[0];
+             document.getElementById("getData2_2").innerHTML = acard[1];
+             document.getElementById("getData2_3").innerHTML = acard[2];
+             document.getElementById("getData2_4").innerHTML = acard[3];
+             document.getElementById("getData2_5").innerHTML = acard[4];
+             document.getElementById("getData2_6").innerHTML = acard[5];
+             document.getElementById("getData2_7").innerHTML = acard[6];
+             document.getElementById("getData2_8").innerHTML = acard[7];
+             document.getElementById("getData2_9").innerHTML = acard[8];
+             document.getElementById("getData2_10").innerHTML = acard[9];
+             document.getElementById("getData2_11").innerHTML = acard[10];
+             document.getElementById("getData2_12").innerHTML = acard[11];
+             
+             if(window.localStorage){
+                 let json2 = JSON.stringify(acard, undefined, 1);
+                 localStorage.setItem('a',json2);
+                 
+                 /*let json_a = localStorage.getItem('a');
+                 let array2 = localStorage.getItem('a');*/
+             }
+             
+        }
+        
+        //ページリロード時
+       window.onload = function Load(){
+          if(window.localStorage){
+              
+              let array = JSON.parse(localStorage.getItem('role'));
+              
+              document.getElementById("getData1").innerHTML = array[0];
+              document.getElementById("getData2").innerHTML = array[1];
+              document.getElementById("getData3").innerHTML = array[2];
+              document.getElementById("getData4").innerHTML = array[3];
+              document.getElementById("getData5").innerHTML = array[4];
+              document.getElementById("getData6").innerHTML = array[5];
+              document.getElementById("getData7").innerHTML = array[6];
+              document.getElementById("getData8").innerHTML = array[7];
+              document.getElementById("getData9").innerHTML = array[8];
+              document.getElementById("getData10").innerHTML = array[9];
+              document.getElementById("getData11").innerHTML = array[10];
+              document.getElementById("getData12").innerHTML = array[11];
+              
+              let array2 = JSON.parse(localStorage.getItem('a'));
+              
+              document.getElementById("getData2_1").innerHTML = array2[0];
+              document.getElementById("getData2_2").innerHTML = array2[1];
+              document.getElementById("getData2_3").innerHTML = array2[2];
+              document.getElementById("getData2_4").innerHTML = array2[3];
+              document.getElementById("getData2_5").innerHTML = array2[4];
+              document.getElementById("getData2_6").innerHTML = array2[5];
+              document.getElementById("getData2_7").innerHTML = array2[6];
+              document.getElementById("getData2_8").innerHTML = array2[7];
+              document.getElementById("getData2_9").innerHTML = array2[8];
+              document.getElementById("getData2_10").innerHTML = array2[9];
+              document.getElementById("getData2_11").innerHTML = array2[10];
+              document.getElementById("getData2_12").innerHTML = array2[11];
+
+      }
+  }
+   
+  //役割カード説明表示  
+  function dispiay1(){
+      var x = document.getElementById("img1");
+          if(rolecard[0] == "司会"){
+              x.innerHTML = '<img src={% static "司会.JPG" %} alt="司会説明" width="400" height="420">'; 
+             }
+          if(rolecard[0] == "議事録"){
+              x.innerHTML = '<img src={% static "議事録.JPG" %} alt="議事録説明" width="400" height="420">'; 
+             }
+        　　if(rolecard[0] == "タイマー"){
+             x.innerHTML = '<img src={% static "タイマー.JPG" %} alt="タイマー説明" width="400" height="420">'; 
+            }
+        　　if(rolecard[0] == "仕掛け人"){
+              x.innerHTML = '<img src={% static "仕掛け人.png" %} alt="仕掛け人説明" width="400" height="420">'; 
+             }
+        　　if(rolecard[0] == "脱線防止"){
+              x.innerHTML = '<img src={% static "脱線防止.JPG" %} alt="脱線防止説明" width="400" height="420">'; 
+             }
+         if(rolecard[0] == "整理"){
+              x.innerHTML = '<img src={% static "整理.png" %} alt="整理説明" width="400" height="420">'; 
+             }
+        　　if(rolecard[0] == "疑問"){
+              x.innerHTML = '<img src={% static "疑問.JPG" %} alt="疑問説明" width="400" height="420">'; 
+             }
+        　　if(rolecard[0] == "便乗"){
+              x.innerHTML = '<img src={% static "便乗.png" %} alt="便乗説明" width="400" height="420">'; 
+             }
+      }
+   function dispiay2(){
+        var x = document.getElementById("img1");
+            if(rolecard[1] == "司会"){
+                x.innerHTML = '<img src={% static "司会.JPG" %} alt="司会説明" width="400" height="420">'; 
+               }
+            if(rolecard[1] == "議事録"){
+                x.innerHTML = '<img src={% static "議事録.JPG" %} alt="議事録説明" width="400" height="420">'; 
+               }
+          　　if(rolecard[1] == "タイマー"){
+               x.innerHTML = '<img src={% static "タイマー.JPG" %} alt="タイマー説明" width="400" height="420">'; 
+              }
+          　　if(rolecard[1] == "仕掛け人"){
+                x.innerHTML = '<img src={% static "仕掛け人.png" %} alt="仕掛け人説明" width="400" height="420">'; 
+               }
+          　　if(rolecard[1] == "脱線防止"){
+                x.innerHTML = '<img src={% static "脱線防止.JPG" %} alt="脱線防止説明" width="400" height="420">'; 
+               }
+            if(rolecard[1] == "整理"){
+                 x.innerHTML = '<img src={% static "整理.png" %} alt="整理説明" width="400" height="420">'; 
+                }
+          　　if(rolecard[1] == "疑問"){
+                x.innerHTML = '<img src={% static "疑問.JPG" %} alt="疑問説明" width="400" height="420">'; 
+               }
+            if(rolecard[1] == "便乗"){
+                x.innerHTML = '<img src={% static "便乗.png" %} alt="便乗説明" width="400" height="420">'; 
+               }
+        } 
+     function dispiay3(){
+          var x = document.getElementById("img1");
+              if(rolecard[2] == "司会"){
+                  x.innerHTML = '<img src={% static "司会.JPG" %} alt="司会説明" width="400" height="420">'; 
+                 }
+              if(rolecard[2] == "議事録"){
+                  x.innerHTML = '<img src={% static "議事録.JPG" %} alt="議事録説明" width="400" height="420">'; 
+                 }
+            　　if(rolecard[2] == "タイマー"){
+                 x.innerHTML = '<img src={% static "タイマー.JPG" %} alt="タイマー説明" width="400" height="420">'; 
+                }
+            　　if(rolecard[2] == "仕掛け人"){
+                  x.innerHTML = '<img src={% static "仕掛け人.png" %} alt="仕掛け人説明" width="400" height="420">'; 
+                 }
+            　　if(rolecard[2] == "脱線防止"){
+                  x.innerHTML = '<img src={% static "脱線防止.JPG" %} alt="脱線防止説明" width="400" height="420">'; 
+                 }
+            　　if(rolecard[2] == "整理"){
+                   x.innerHTML = '<img src={% static "整理.png" %} alt="整理説明" width="400" height="420">'; 
+                  }
+            　　if(rolecard[2] == "疑問"){
+                  x.innerHTML = '<img src={% static "疑問.JPG" %} alt="疑問説明" width="400" height="420">'; 
+                 }
+              if(rolecard[2] == "便乗"){
+                  x.innerHTML = '<img src={% static "便乗.png" %} alt="便乗説明" width="400" height="420">'; 
+                 }
+          } 
+    function dispiay4(){
+         var x = document.getElementById("img1");
+             if(rolecard[3] == "司会"){
+                 x.innerHTML = '<img src={% static "司会.JPG" %} alt="司会説明" width="400" height="420">'; 
+                }
+             if(rolecard[3] == "議事録"){
+                 x.innerHTML = '<img src={% static "議事録.JPG" %} alt="議事録説明" width="400" height="420">'; 
+                }
+           　　if(rolecard[3] == "タイマー"){
+                x.innerHTML = '<img src={% static "タイマー.JPG" %} alt="タイマー説明" width="400" height="420">'; 
+               }
+           　　if(rolecard[3] == "仕掛け人"){
+                 x.innerHTML = '<img src={% static "仕掛け人.png" %} alt="仕掛け人説明" width="400" height="420">'; 
+                }
+           　　if(rolecard[3] == "脱線防止"){
+                 x.innerHTML = '<img src={% static "脱線防止.JPG" %} alt="脱線防止説明" width="400" height="420">'; 
+                }
+            　if(rolecard[3] == "整理"){
+                  x.innerHTML = '<img src={% static "整理.png" %} alt="整理説明" width="400" height="420">'; 
+                 }
+           　　if(rolecard[3] == "疑問"){
+                 x.innerHTML = '<img src={% static "疑問.JPG" %} alt="疑問説明" width="400" height="420">'; 
+                }
+             if(rolecard[3] == "便乗"){
+                 x.innerHTML = '<img src={% static "便乗.png" %} alt="便乗説明" width="400" height="420">'; 
+                }
+         } 
+     function dispiay5(){
+          var x = document.getElementById("img1");
+              if(rolecard[4] == "司会"){
+                  x.innerHTML = '<img src={% static "司会.JPG" %} alt="司会説明" width="400" height="420">'; 
+                 }
+              if(rolecard[4] == "議事録"){
+                  x.innerHTML = '<img src={% static "議事録.JPG" %} alt="議事録説明" width="400" height="420">'; 
+                 }
+            　　if(rolecard[4] == "タイマー"){
+                 x.innerHTML = '<img src={% static "タイマー.JPG" %} alt="タイマー説明" width="400" height="420">'; 
+                }
+            　　if(rolecard[4] == "仕掛け人"){
+                  x.innerHTML = '<img src={% static "仕掛け人.png" %} alt="仕掛け人説明" width="400" height="420">'; 
+                 }
+            　　if(rolecard[4] == "脱線防止"){
+                  x.innerHTML = '<img src={% static "脱線防止.JPG" %} alt="脱線防止説明" width="400" height="420">'; 
+                 }
+            　　if(rolecard[4] == "整理"){
+                   x.innerHTML = '<img src={% static "整理.png" %} alt="整理説明" width="400" height="420">'; 
+                  }
+            　　if(rolecard[4] == "疑問"){
+                  x.innerHTML = '<img src={% static "疑問.JPG" %} alt="疑問説明" width="400" height="420">'; 
+                 }
+              if(rolecard[4] == "便乗"){
+                  x.innerHTML = '<img src={% static "便乗.png" %} alt="便乗説明" width="400" height="420">'; 
+                 }
+          } 
+     function dispiay6(){
+          var x = document.getElementById("img1");
+              if(rolecard[5] == "司会"){
+                  x.innerHTML = '<img src={% static "司会.JPG" %} alt="司会説明" width="400" height="420">'; 
+                 }
+              if(rolecard[5] == "議事録"){
+                  x.innerHTML = '<img src={% static "議事録.JPG" %} alt="議事録説明" width="400" height="420">'; 
+                 }
+            　　if(rolecard[5] == "タイマー"){
+                 x.innerHTML = '<img src={% static "タイマー.JPG" %} alt="タイマー説明" width="400" height="420">'; 
+                }
+            　　if(rolecard[5] == "仕掛け人"){
+                  x.innerHTML = '<img src={% static "仕掛け人.png" %} alt="仕掛け人説明" width="400" height="420">'; 
+                 }
+            　　if(rolecard[5] == "脱線防止"){
+                  x.innerHTML = '<img src={% static "脱線防止.JPG" %} alt="脱線防止説明" width="400" height="420">'; 
+                 }
+            　　if(rolecard[5] == "整理"){
+                   x.innerHTML = '<img src={% static "整理.png" %} alt="整理説明" width="400" height="420">'; 
+                  }
+            　　if(rolecard[5] == "疑問"){
+                  x.innerHTML = '<img src={% static "疑問.JPG" %} alt="疑問説明" width="400" height="420">'; 
+                 }
+              if(rolecard[5] == "便乗"){
+                  x.innerHTML = '<img src={% static "便乗.png" %} alt="便乗説明" width="400" height="420">'; 
+                 }
+          } 
+     function dispiay7(){
+          var x = document.getElementById("img1");
+              if(rolecard[6] == "司会"){
+                  x.innerHTML = '<img src={% static "司会.JPG" %} alt="司会説明" width="400" height="420">'; 
+                 }
+              if(rolecard[6] == "議事録"){
+                  x.innerHTML = '<img src={% static "議事録.JPG" %} alt="議事録説明" width="400" height="420">'; 
+                 }
+            　　if(rolecard[6] == "タイマー"){
+                 x.innerHTML = '<img src={% static "タイマー.JPG" %} alt="タイマー説明" width="400" height="420">'; 
+                }
+            　　if(rolecard[6] == "仕掛け人"){
+                  x.innerHTML = '<img src={% static "仕掛け人.png" %} alt="仕掛け人説明" width="400" height="420">'; 
+                 }
+            　　if(rolecard[6] == "脱線防止"){
+                  x.innerHTML = '<img src={% static "脱線防止.JPG" %} alt="脱線防止説明" width="400" height="420">'; 
+                 }
+            　　if(rolecard[6] == "整理"){
+                   x.innerHTML = '<img src={% static "整理.png" %} alt="整理説明" width="400" height="420">'; 
+                  }
+            　　if(rolecard[6] == "疑問"){
+                  x.innerHTML = '<img src={% static "疑問.JPG" %} alt="疑問説明" width="400" height="420">'; 
+                 }
+              if(rolecard[6] == "便乗"){
+                  x.innerHTML = '<img src={% static "便乗.png" %} alt="便乗説明" width="400" height="420">'; 
+                 }
+          } 
+     function dispiay8(){
+          var x = document.getElementById("img1");
+              if(rolecard[7] == "司会"){
+                  x.innerHTML = '<img src={% static "司会.JPG" %} alt="司会説明" width="400" height="420">'; 
+                 }
+              if(rolecard[7] == "議事録"){
+                  x.innerHTML = '<img src={% static "議事録.JPG" %} alt="議事録説明" width="400" height="420">'; 
+                 }
+            　　if(rolecard[7] == "タイマー"){
+                 x.innerHTML = '<img src={% static "タイマー.JPG" %} alt="タイマー説明" width="400" height="420">'; 
+                }
+            　　if(rolecard[7] == "仕掛け人"){
+                  x.innerHTML = '<img src={% static "仕掛け人.png" %} alt="仕掛け人説明" width="400" height="420">'; 
+                 }
+            　　if(rolecard[7] == "脱線防止"){
+                  x.innerHTML = '<img src={% static "脱線防止.JPG" %} alt="脱線防止説明" width="400" height="420">'; 
+                 }
+            　　if(rolecard[7] == "整理"){
+                   x.innerHTML = '<img src={% static "整理.png" %} alt="整理説明" width="400" height="420">'; 
+                  }
+            　　if(rolecard[7] == "疑問"){
+                  x.innerHTML = '<img src={% static "疑問.JPG" %} alt="疑問説明" width="400" height="420">'; 
+                 }
+              if(rolecard[7] == "便乗"){
+                  x.innerHTML = '<img src={% static "便乗.png" %} alt="便乗説明" width="400" height="420">'; 
+                 }
+          } 
+     function dispiay9(){
+          var x = document.getElementById("img1");
+              if(rolecard[8] == "司会"){
+                  x.innerHTML = '<img src={% static "司会.JPG" %} alt="司会説明" width="400" height="420">'; 
+                 }
+              if(rolecard[8] == "議事録"){
+                  x.innerHTML = '<img src={% static "議事録.JPG" %} alt="議事録説明" width="400" height="420">'; 
+                 }
+            　　if(rolecard[8] == "タイマー"){
+                 x.innerHTML = '<img src={% static "タイマー.JPG" %} alt="タイマー説明" width="400" height="420">'; 
+                }
+            　　if(rolecard[8] == "仕掛け人"){
+                  x.innerHTML = '<img src={% static "仕掛け人.png" %} alt="仕掛け人説明" width="400" height="420">'; 
+                 }
+            　　if(rolecard[8] == "脱線防止"){
+                  x.innerHTML = '<img src={% static "脱線防止.JPG" %} alt="脱線防止説明" width="400" height="420">'; 
+                 }
+            　　if(rolecard[8] == "整理"){
+                   x.innerHTML = '<img src={% static "整理.png" %} alt="整理説明" width="400" height="420">'; 
+                  }
+            　　if(rolecard[8] == "疑問"){
+                  x.innerHTML = '<img src={% static "疑問.JPG" %} alt="疑問説明" width="400" height="420">'; 
+                 }
+              if(rolecard[8] == "便乗"){
+                  x.innerHTML = '<img src={% static "便乗.png" %} alt="便乗説明" width="400" height="420">'; 
+                 }
+          } 
+     function dispiay10(){
+          var x = document.getElementById("img1");
+              if(rolecard[9] == "司会"){
+                  x.innerHTML = '<img src={% static "司会.JPG" %} alt="司会説明" width="400" height="420">'; 
+                 }
+              if(rolecard[9] == "議事録"){
+                  x.innerHTML = '<img src={% static "議事録.JPG" %} alt="議事録説明" width="400" height="420">'; 
+                 }
+            　　if(rolecard[9] == "タイマー"){
+                 x.innerHTML = '<img src={% static "タイマー.JPG" %} alt="タイマー説明" width="400" height="420">'; 
+                }
+            　　if(rolecard[9] == "仕掛け人"){
+                  x.innerHTML = '<img src={% static "仕掛け人.png" %} alt="仕掛け人説明" width="400" height="420">'; 
+                 }
+            　　if(rolecard[9] == "脱線防止"){
+                  x.innerHTML = '<img src={% static "脱線防止.JPG" %} alt="脱線防止説明" width="400" height="420">'; 
+                 }
+            　　if(rolecard[9] == "整理"){
+                   x.innerHTML = '<img src={% static "整理.png" %} alt="整理説明" width="400" height="420">'; 
+                  }
+            　　if(rolecard[9] == "疑問"){
+                  x.innerHTML = '<img src={% static "疑問.JPG" %} alt="疑問説明" width="400" height="420">'; 
+                 }
+              if(rolecard[9] == "便乗"){
+                  x.innerHTML = '<img src={% static "便乗.png" %} alt="便乗説明" width="400" height="420">'; 
+                 }
+          } 
+     function dispiay11(){
+          var x = document.getElementById("img1");
+              if(rolecard[10] == "司会"){
+                  x.innerHTML = '<img src={% static "司会.JPG" %} alt="司会説明" width="400" height="420">'; 
+                 }
+              if(rolecard[10] == "議事録"){
+                  x.innerHTML = '<img src={% static "議事録.JPG" %} alt="議事録説明" width="400" height="420">'; 
+                 }
+            　　if(rolecard[10] == "タイマー"){
+                 x.innerHTML = '<img src={% static "タイマー.JPG" %} alt="タイマー説明" width="400" height="420">'; 
+                }
+            　　if(rolecard[10] == "仕掛け人"){
+                  x.innerHTML = '<img src={% static "仕掛け人.png" %} alt="仕掛け人説明" width="400" height="420">'; 
+                 }
+            　　if(rolecard[10] == "脱線防止"){
+                  x.innerHTML = '<img src={% static "脱線防止.JPG" %} alt="脱線防止説明" width="400" height="420">'; 
+                 }
+            　　if(rolecard[10] == "整理"){
+                   x.innerHTML = '<img src={% static "整理.png" %} alt="整理説明" width="400" height="420">'; 
+                  }
+            　　if(rolecard[10] == "疑問"){
+                  x.innerHTML = '<img src={% static "疑問.JPG" %} alt="疑問説明" width="400" height="420">'; 
+                 }
+              if(rolecard[10] == "便乗"){
+                  x.innerHTML = '<img src={% static "便乗.png" %} alt="便乗説明" width="400" height="420">'; 
+                 }
+          } 
+     function dispiay12(){
+          var x = document.getElementById("img1");
+              if(rolecard[11] == "司会"){
+                  x.innerHTML = '<img src={% static "司会.JPG" %} alt="司会説明" width="400" height="420">'; 
+                 }
+              if(rolecard[11] == "議事録"){
+                  x.innerHTML = '<img src={% static "議事録.JPG" %} alt="議事録説明" width="400" height="420">'; 
+                 }
+            　　if(rolecard[11] == "タイマー"){
+                 x.innerHTML = '<img src={% static "タイマー.JPG" %} alt="タイマー説明" width="400" height="420">'; 
+                }
+            　　if(rolecard[11] == "仕掛け人"){
+                  x.innerHTML = '<img src={% static "仕掛け人.png" %} alt="仕掛け人説明" width="400" height="420">'; 
+                 }
+            　　if(rolecard[11] == "脱線防止"){
+                  x.innerHTML = '<img src={% static "脱線防止.JPG" %} alt="脱線防止説明" width="400" height="420">'; 
+                 }
+            　　if(rolecard[11] == "整理"){
+                   x.innerHTML = '<img src={% static "整理.png" %} alt="整理説明" width="400" height="420">'; 
+                  }
+            　　if(rolecard[11] == "疑問"){
+                  x.innerHTML = '<img src={% static "疑問.JPG" %} alt="疑問説明" width="400" height="420">'; 
+                 }
+              if(rolecard[11] == "便乗"){
+                  x.innerHTML = '<img src={% static "便乗.png" %} alt="便乗説明" width="400" height="420">'; 
+                 }
+          } 
+     
+    //属性カード説明表示      
+    /*function dispiay2_1(){
+        var y = document.getElementById("img2");
+            if(acard[0] == "メリット"){
+                y.innerHTML = '<img src={% static "メリット.JPG" %} alt="メリット説明" width="400" height="420">'; 
+               }
+            if(acard[0] == "デメリット"){
+                y.innerHTML = '<img src={% static "デメリット.JPG" %} alt="デメリット説明" width="400" height="420">'; 
+               }
+          　　if(acard[0] == "感情"){
+                y.innerHTML = '<img src={% static "感情.JPG" %} alt="感増説明" width="400" height="420">'; 
+              }
+          　　if(acard[0] == "疑問"){
+                y.innerHTML = '<img src={% static "疑問.JPG" %} alt="疑問説明" width="400" height="420">'; 
+               }
+          　　if(acard[0] == "データ"){
+                y.innerHTML = '<img src={% static "データ.JPG" %} alt="データ説明" width="400" height="420">'; 
+               }
+        }  
+    function dispiay2_2(){
+        var y = document.getElementById("img2");
+            if(acard[1] == "メリット"){
+                y.innerHTML = '<img src={% static "メリット.JPG" %} alt="メリット説明" width="400" height="420">'; 
+               }
+            if(acard[1] == "デメリット"){
+                y.innerHTML = '<img src={% static "デメリット.JPG" %} alt="デメリット説明" width="400" height="420">'; 
+               }
+          　　if(acard[1] == "感情"){
+               y.innerHTML = '<img src={% static "感情.JPG" %} alt="感増説明" width="400" height="420">'; 
+              }
+          　　if(acard[1] == "疑問"){
+                y.innerHTML = '<img src={% static "疑問.JPG" %} alt="疑問説明" width="400" height="420">'; 
+               }
+          　　if(acard[1] == "データ"){
+                y.innerHTML = '<img src={% static "データ.JPG" %} alt="データ説明" width="400" height="420">'; 
+               }
+        }         
+    function dispiay2_3(){
+        var y = document.getElementById("img2");
+            if(acard[2] == "メリット"){
+                y.innerHTML = '<img src={% static "メリット.JPG" %} alt="メリット説明" width="400" height="420">'; 
+               }
+            if(acard[2] == "デメリット"){
+                y.innerHTML = '<img src={% static "デメリット.JPG" %} alt="デメリット説明" width="400" height="420">'; 
+               }
+          　　if(acard[2] == "感情"){
+               y.innerHTML = '<img src={% static "感情.JPG" %} alt="感増説明" width="400" height="420">'; 
+              }
+          　　if(acard[2] == "疑問"){
+                y.innerHTML = '<img src={% static "疑問.JPG" %} alt="疑問説明" width="400" height="420">'; 
+               }
+          　　if(acard[2] == "データ"){
+                y.innerHTML = '<img src={% static "データ.JPG" %} alt="データ説明" width="400" height="420">'; 
+               }
+        }  
+    function dispiay2_4(){
+        var y = document.getElementById("img2");
+            if(acard[3] == "メリット"){
+                y.innerHTML = '<img src={% static "メリット.JPG" %} alt="メリット説明" width="400" height="420">'; 
+               }
+            if(acard[3] == "デメリット"){
+                y.innerHTML = '<img src={% static "デメリット.JPG" %} alt="デメリット説明" width="400" height="420">'; 
+               }
+          　　if(acard[3] == "感情"){
+               y.innerHTML = '<img src={% static "感情.JPG" %} alt="感増説明" width="400" height="420">'; 
+              }
+          　　if(acard[3] == "疑問"){
+                y.innerHTML = '<img src={% static "疑問.JPG" %} alt="疑問説明" width="400" height="420">'; 
+               }
+          　　if(acard[3] == "データ"){
+                y.innerHTML = '<img src={% static "データ.JPG" %} alt="データ説明" width="400" height="420">'; 
+               }
+        }  
+    function dispiay2_5(){
+        var y = document.getElementById("img2");
+            if(acard[4] == "メリット"){
+                y.innerHTML = '<img src={% static "メリット.JPG" %} alt="メリット説明" width="400" height="420">'; 
+               }
+            if(acard[4] == "デメリット"){
+                y.innerHTML = '<img src={% static "デメリット.JPG" %} alt="デメリット説明" width="400" height="420">'; 
+               }
+          　　if(acard[4] == "感情"){
+               y.innerHTML = '<img src={% static "感情.JPG" %} alt="感増説明" width="400" height="420">'; 
+              }
+          　　if(acard[4] == "疑問"){
+                y.innerHTML = '<img src={% static "疑問.JPG" %} alt="疑問説明" width="400" height="420">'; 
+               }
+          　　if(acard[4] == "データ"){
+                y.innerHTML = '<img src={% static "データ.JPG" %} alt="データ説明" width="400" height="420">'; 
+               }
+        }  
+    function dispiay2_6(){
+        var y = document.getElementById("img2");
+            if(acard[5] == "メリット"){
+                y.innerHTML = '<img src={% static "メリット.JPG" %} alt="メリット説明" width="400" height="420">'; 
+               }
+            if(acard[5] == "デメリット"){
+                y.innerHTML = '<img src={% static "デメリット.JPG" %} alt="デメリット説明" width="400" height="420">'; 
+               }
+          　　if(acard[5] == "感情"){
+               y.innerHTML = '<img src={% static "感情.JPG" %} alt="感増説明" width="400" height="420">'; 
+              }
+          　　if(acard[5] == "疑問"){
+                y.innerHTML = '<img src={% static "疑問.JPG" %} alt="疑問説明" width="400" height="420">'; 
+               }
+          　　if(acard[5] == "データ"){
+                y.innerHTML = '<img src={% static "データ.JPG" %} alt="データ説明" width="400" height="420">'; 
+               }
+        }  
+    function dispiay2_7(){
+        var y = document.getElementById("img2");
+            if(acard[6] == "メリット"){
+                y.innerHTML = '<img src={% static "メリット.JPG" %} alt="メリット説明" width="400" height="420">'; 
+               }
+            if(acard[6] == "デメリット"){
+                y.innerHTML = '<img src={% static "デメリット.JPG" %} alt="デメリット説明" width="400" height="420">'; 
+               }
+          　　if(acard[6] == "感情"){
+               y.innerHTML = '<img src={% static "感情.JPG" %} alt="感増説明" width="400" height="420">'; 
+              }
+          　　if(acard[6] == "疑問"){
+                y.innerHTML = '<img src={% static "疑問.JPG" %} alt="疑問説明" width="400" height="420">'; 
+               }
+          　　if(acard[6] == "データ"){
+                y.innerHTML = '<img src={% static "データ.JPG" %} alt="データ説明" width="400" height="420">'; 
+               }
+        }  
+    function dispiay2_8(){
+        var y = document.getElementById("img2");
+            if(acard[7] == "メリット"){
+                y.innerHTML = '<img src={% static "メリット.JPG" %} alt="メリット説明" width="400" height="420">'; 
+               }
+            if(acard[7] == "デメリット"){
+                y.innerHTML = '<img src={% static "デメリット.JPG" %} alt="デメリット説明" width="400" height="420">'; 
+               }
+          　　if(acard[7] == "感情"){
+                y.innerHTML = '<img src={% static "感情.JPG" %} alt="感増説明" width="400" height="420">'; 
+              }
+          　　if(acard[7] == "疑問"){
+                y.innerHTML = '<img src={% static "疑問.JPG" %} alt="疑問説明" width="400" height="420">'; 
+               }
+          　　if(acard[7] == "データ"){
+                y.innerHTML = '<img src={% static "データ.JPG" %} alt="データ説明" width="400" height="420">'; 
+               }
+        }  
+    function dispiay2_9(){
+        var y = document.getElementById("img2");
+            if(acard[8] == "メリット"){
+                y.innerHTML = '<img src={% static "メリット.JPG" %} alt="メリット説明" width="400" height="420">'; 
+               }
+            if(acard[8] == "デメリット"){
+                y.innerHTML = '<img src={% static "デメリット.JPG" %} alt="デメリット説明" width="400" height="420">'; 
+               }
+          　　if(acard[8] == "感情"){
+               y.innerHTML = '<img src={% static "感情.JPG" %} alt="感増説明" width="400" height="420">'; 
+              }
+          　　if(acard[8] == "疑問"){
+                y.innerHTML = '<img src={% static "疑問.JPG" %} alt="疑問説明" width="400" height="420">'; 
+               }
+          　　if(acard[8] == "データ"){
+                y.innerHTML = '<img src={% static "データ.JPG" %} alt="データ説明" width="400" height="420">'; 
+               }
+        }  
+    function dispiay2_10(){
+        var y = document.getElementById("img2");
+            if(acard[9] == "メリット"){
+                y.innerHTML = '<img src={% static "メリット.JPG" %} alt="メリット説明" width="400" height="420">'; 
+               }
+            if(acard[9] == "デメリット"){
+                y.innerHTML = '<img src={% static "デメリット.JPG" %} alt="デメリット説明" width="400" height="420">'; 
+               }
+          　　if(acard[9] == "感情"){
+               y.innerHTML = '<img src={% static "感情.JPG" %} alt="感増説明" width="400" height="420">'; 
+              }
+          　　if(acard[9] == "疑問"){
+                y.innerHTML = '<img src={% static "疑問.JPG" %} alt="疑問説明" width="400" height="420">'; 
+               }
+          　　if(acard[9] == "データ"){
+                y.innerHTML = '<img src={% static "データ.JPG" %} alt="データ説明" width="400" height="420">'; 
+               }
+        }  
+    function dispiay2_11(){
+        var y = document.getElementById("img1");
+            if(acard[10] == "メリット"){
+                y.innerHTML = '<img src={% static "メリット.JPG" %} alt="メリット説明" width="400" height="420">'; 
+               }
+            if(acard[10] == "デメリット"){
+                y.innerHTML = '<img src={% static "デメリット.JPG" %} alt="デメリット説明" width="400" height="420">'; 
+               }
+          　　if(acard[10] == "感情"){
+               y.innerHTML = '<img src={% static "感情.JPG" %} alt="感増説明" width="400" height="420">'; 
+              }
+          　　if(acard[10] == "疑問"){
+                y.innerHTML = '<img src={% static "疑問.JPG" %} alt="疑問説明" width="400" height="420">'; 
+               }
+          　　if(acard[10] == "データ"){
+                y.innerHTML = '<img src={% static "データ.JPG" %} alt="データ説明" width="400" height="420">'; 
+               }
+        }  
+    function dispiay2_12(){
+        var y = document.getElementById("img1");
+            if(acard[11] == "メリット"){
+                y.innerHTML = '<img src={% static "メリット.JPG" %} alt="メリット説明" width="400" height="420">'; 
+               }
+            if(acard[11] == "デメリット"){
+                y.innerHTML = '<img src={% static "デメリット.JPG" %} alt="デメリット説明" width="400" height="420">'; 
+               }
+          　　if(acard[11] == "感情"){
+               y.innerHTML = '<img src={% static "感情.JPG" %} alt="感増説明" width="400" height="420">'; 
+              }
+          　　if(acard[11] == "疑問"){
+                y.innerHTML = '<img src={% static "疑問.JPG" %} alt="疑問説明" width="400" height="420">'; 
+               }
+          　　if(acard[11] == "データ"){
+                y.innerHTML = '<img src={% static "データ.JPG" %} alt="データ説明" width="400" height="420">'; 
+               }
+        } */
+        
+    // プッシュ通知
+     function rpush(){
+        Push.create('役割カードが変更されました！');
+         }
+    　/*function apush(){
+       　Push.create('属性カードが変更されました！');
+        　}*/
+ </script>
+
+</html>
